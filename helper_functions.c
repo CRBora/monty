@@ -65,6 +65,8 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		pop(stack, line_number);
 	else if (strcmp(opcode, "swap") == 0)
 		swap(stack, line_number);
+	else if (strcmp(opcode, "add") == 0)
+		add(stack, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
