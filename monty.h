@@ -45,5 +45,6 @@ int is_digit(char *str);
 void process_line(char *line, unsigned int line_number, stack_t **stack);
 void clean_resources(FILE *file, char *line);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif
