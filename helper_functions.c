@@ -1,4 +1,5 @@
-
+#include "monty.h"
+#include <stdio.h>
 
 /**
  * is_digit - function that checks for a digit
