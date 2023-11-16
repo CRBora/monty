@@ -7,7 +7,7 @@
  *
  * Return: ) if digit otherwise returns 1
  */
-int is_digit(const char *str)
+int is_digit(char *str)
 {
 	if (!str)
 		return (0);
@@ -34,8 +34,8 @@ void clean_resources(FILE *file, char *line)
 /**
  * process_line - function to process each line of the Monty bytecode
  * @line: pointer to character array being processed
- * @line_number: keeps track of line number being processed
- * @stack: pointer to a stack array
+ * @line_number: line number in the Monty bytecode file
+ * @stack: double pointer to the head of the stack
  */
 void process_line(char *line, unsigned int line_number, stack_t **stack)
 {
@@ -59,6 +59,8 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 	}
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack);
+	else if (strcmp(opcode, "pint") == 0)
+		pint(stack, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

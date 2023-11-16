@@ -41,8 +41,9 @@ typedef struct instruction_s
 void push(stack_t **stack, int num);
 void pall(stack_t **stack);
 int _isdigit(int c);
-int is_digit(const char *str);
+int is_digit(char *str);
 void process_line(char *line, unsigned int line_number, stack_t **stack);
 void clean_resources(FILE *file, char *line);
+void pint(stack_t **stack, unsigned int line_number);
 
 #endif

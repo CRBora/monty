@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
 	while (getline(&line, &len, file) != -1)
 	{
 		process_line(line, line_number, &stack);
+
+		if (strcmp(line, "pint\n") == 0)
+			pint(&stack, line_number);
 		line_number++;
 	}
 	clean_resources(file, line);

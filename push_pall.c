@@ -2,7 +2,7 @@
 
 /**
  * push - function to push an elemnet onto a stack
- * @stack: pointer to an array
+ * @stack: double pointer to the head of the stack
  * @num: element to be added
  */
 void push(stack_t **stack, int num)
@@ -17,16 +17,19 @@ void push(stack_t **stack, int num)
 
 	new_node->n = num;
 	new_node->prev = NULL;
-	new_node->next = *stack;
+	new_node->next = NULL;
 
 	if (*stack != NULL)
+	{
+		new_node->next = *stack;
 		(*stack)->prev = new_node;
+	}
 	*stack = new_node;
 }
 
 /**
  * pall - function that prints all values on the stack
- * @stack: pointer to an array
+ * @stack: double pointer to the head of the stack
  */
 void pall(stack_t **stack)
 {
