@@ -1,4 +1,4 @@
-#include "monty.h"
+
 
 /**
  * is_digit - function that checks for a digit
@@ -53,7 +53,7 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 			exit(EXIT_FAILURE);
 		}
 		num = atoi(arg);
-		
+
 		push(stack, num);
 	}
 	else if (strcmp(opcode, "pall") == 0)
